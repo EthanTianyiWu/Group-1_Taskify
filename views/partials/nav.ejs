@@ -18,16 +18,20 @@
 
         <nav role="navigation" aria-label="Main navigation">
           <ul class="nav-items" role="menubar">
-            <li role="none"><a href="#" role="menuitem">Features</a></li>
-            <li role="none"><a href="#" role="menuitem">Templates</a></li>
-            <li role="none"><a href="#" role="menuitem">For Teams</a></li>
-            <li role="none"><a href="#" role="menuitem">Resources</a></li>
-            <li role="none"><a href="#" role="menuitem">Pricing</a></li>
+            <li role="none"><a href="#" role="menuitem"><%= t.nav.features %></a></li>
+            <li role="none"><a href="#" role="menuitem"><%= t.nav.templates %></a></li>
+            <li role="none"><a href="#" role="menuitem"><%= t.nav.for_teams %></a></li>
+            <li role="none"><a href="#" role="menuitem"><%= t.nav.resources %></a></li>
+            <li role="none"><a href="#" role="menuitem"><%= t.nav.pricing %></a></li>
           </ul>
         </nav>
         <div class="nav-buttons">
-          <a href="/signup" class="btn1 nav-btn" aria-label="Sign up for Taskify">Sign Up</a>
-          <a href="/dashboard" class="btn2 nav-btn" aria-label="Log in to Taskify">Log In</a>
+          <div class="language-switcher">
+            <a href="?lang=en" class="lang-btn"><%= t.lang.english %></a>
+            <a href="?lang=zh" class="lang-btn"><%= t.lang.chinese %></a>
+          </div>
+          <a href="/signup" class="btn1 nav-btn" aria-label="Sign up for Taskify"><%= t.nav.sign_up %></a>
+          <a href="/dashboard" class="btn2 nav-btn" aria-label="Log in to Taskify"><%= t.nav.log_in %></a>
         </div>
       </div>
     </header>

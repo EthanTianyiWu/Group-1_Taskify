@@ -134,3 +134,30 @@ a .nav-title:hover {
   color: var(--clr-light-white);
   background-color: #374151;
 }
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  color: var(--clr-text);
+  background-color: transparent;
+  border: 1px solid var(--clr-lightgrey);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  background-color: var(--clr-light-white);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  text-decoration: none;
+}

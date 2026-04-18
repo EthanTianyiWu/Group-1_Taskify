@@ -102,3 +102,31 @@ input{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+
+.language-switcher-top {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	display: flex;
+	gap: 8px;
+	z-index: 100;
+}
+
+.language-switcher-top .lang-btn {
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #1a1a1a;
+	background-color: #fff;
+	border: 1px solid #9ca3af;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.language-switcher-top .lang-btn:hover {
+	background-color: #f0f0f0;
+	border-color: #0ca6ec;
+	color: #0ca6ec;
+}

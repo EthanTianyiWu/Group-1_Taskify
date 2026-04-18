@@ -14,8 +14,7 @@
       <div class="container hero-container">
         <div class="hero-col-text">
           <div>
-            <h1 class="hero-heading">One app to
-              replace them all</h1>
+            <h1 class="hero-heading"><%= t.hero.title %></h1>
               
           </div>
           <div class="hero-desc">
@@ -23,9 +22,9 @@
           </div>
           
           <label for="hero-email" class="sr-only">Email address</label>
-          <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="Enter your email address" aria-label="Enter your email address">
+          <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="<%= t.hero.email_placeholder %>" aria-label="<%= t.hero.email_placeholder %>">
         
-          <a href="#" class="hero-btn" aria-label="Get started with Taskify">Get Started</a>
+          <a href="#" class="hero-btn" aria-label="Get started with Taskify"><%= t.hero.get_started %></a>
         </div>
         
       

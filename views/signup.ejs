@@ -11,6 +11,10 @@
 </head>
 
 <body>
+  <div class="language-switcher-top">
+    <a href="?lang=en" class="lang-btn"><%= t.lang.english %></a>
+    <a href="?lang=zh" class="lang-btn"><%= t.lang.chinese %></a>
+  </div>
   <main role="main">
     <section class="section signup-section" aria-labelledby="auth-heading">
       <h1 id="auth-heading" class="sr-only">Authentication</h1>
@@ -20,32 +24,32 @@
 
         <div class="signup">
           <form method="post" action="/signup">
-            <label for="chk" aria-hidden="true">Sign up</label>
+            <label for="chk" aria-hidden="true"><%= t.signup.signup %></label>
             <div class="signup-username">
-              <input type="text" name="SignUpUsername" placeholder="User name" required="true" />
+              <input type="text" name="SignUpUsername" placeholder="<%= t.signup.username %>" required="true" />
             </div>
             <div class="signup-email">
-              <input type="email" name="SignUpEmail" placeholder="Email" required="true" />
+              <input type="email" name="SignUpEmail" placeholder="<%= t.signup.email %>" required="true" />
             </div>
             <div class="signup-password">
-              <input type="password" name="SignUpPassword" placeholder="Password" required="true" />
+              <input type="password" name="SignUpPassword" placeholder="<%= t.signup.password %>" required="true" />
             </div>
             <div>
-              <input class="button" name="SignUpSubmit" type="submit" value="Sign up" />
+              <input class="button" name="SignUpSubmit" type="submit" value="<%= t.signup.signup %>" />
             </div>
           </form>
         </div>
         <div class="login">
           <form method="post" action="/login">
-            <label for="chk" aria-hidden="true">Login</label>
+            <label for="chk" aria-hidden="true"><%= t.signup.login %></label>
             <div class="signup-email">
-              <input type="email" name="LoginEmail" placeholder="Enter your email " required="true" />
+              <input type="email" name="LoginEmail" placeholder="<%= t.signup.enter_email %>" required="true" />
             </div>
             <div class="signup-password">
-              <input type="password" name="LoginPassword" placeholder="Enter password" required="true" />
+              <input type="password" name="LoginPassword" placeholder="<%= t.signup.enter_password %>" required="true" />
             </div>
             <div>
-              <input class="button" name="LoginSubmit" type="submit" value="Login" />
+              <input class="button" name="LoginSubmit" type="submit" value="<%= t.signup.login %>" />
             </div>
           </form>
         </div>

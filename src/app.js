@@ -34,6 +34,10 @@ app.get("/dashboard", (req, res) => {
     res.status(200).render("dashboard/dashboard.ejs");
 });
 
+app.get("/privacy-policy", (req, res) => {
+    res.status(200).render("privacy-policy.ejs");
+});
+
 
 
 

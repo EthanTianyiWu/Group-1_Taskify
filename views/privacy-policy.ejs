@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= t.privacy_policy.title %> - Taskify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/styles/main.css" />
+  <link rel="stylesheet" href="../static/styles/privacy-policy.css" />
+</head>
+<body>
+  <main role="main">
+    <section class="privacy-policy-section">
+      <div class="container privacy-policy-container">
+        <h1><%= t.privacy_policy.title %></h1>
+        <p class="privacy-policy-updated"><%= t.privacy_policy.last_updated %>: April 18, 2026</p>
+
+        <div class="privacy-policy-content">
+          <section class="privacy-section">
+            <h2>1. <%= t.privacy_policy.introduction_title %></h2>
+            <p><%= t.privacy_policy.introduction_text %></p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>2. <%= t.privacy_policy.cookies_title %></h2>
+            <p><%= t.privacy_policy.cookies_text %></p>
+            <ul>
+              <li><strong><%= t.privacy_policy.essential_title %></strong>: <%= t.privacy_policy.essential_text %></li>
+              <li><strong><%= t.privacy_policy.functional_title %></strong>: <%= t.privacy_policy.functional_text %></li>
+              <li><strong><%= t.privacy_policy.analytics_title %></strong>: <%= t.privacy_policy.analytics_text %></li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>3. <%= t.privacy_policy.data_collection_title %></h2>
+            <p><%= t.privacy_policy.data_collection_text %></p>
+            <ul>
+              <li><%= t.privacy_policy.data_name %></li>
+              <li><%= t.privacy_policy.data_email %></li>
+              <li><%= t.privacy_policy.data_usage %></li>
+              <li><%= t.privacy_policy.data_device %></li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>4. <%= t.privacy_policy.data_usage_title %></h2>
+            <p><%= t.privacy_policy.data_usage_text %></p>
+            <ul>
+              <li><%= t.privacy_policy.usage_service %></li>
+              <li><%= t.privacy_policy.usage_improve %></li>
+              <li><%= t.privacy_policy.usage_communicate %></li>
+              <li><%= t.privacy_policy.usage_security %></li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>5. <%= t.privacy_policy.data_sharing_title %></h2>
+            <p><%= t.privacy_policy.data_sharing_text %></p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>6. <%= t.privacy_policy.data_security_title %></h2>
+            <p><%= t.privacy_policy.data_security_text %></p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>7. <%= t.privacy_policy.your_rights_title %></h2>
+            <p><%= t.privacy_policy.your_rights_text %></p>
+            <ul>
+              <li><%= t.privacy_policy.right_access %></li>
+              <li><%= t.privacy_policy.right_correct %></li>
+              <li><%= t.privacy_policy.right_delete %></li>
+              <li><%= t.privacy_policy.right_object %></li>
+              <li><%= t.privacy_policy.right_portability %></li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>8. <%= t.privacy_policy.cookie_management_title %></h2>
+            <p><%= t.privacy_policy.cookie_management_text %></p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>9. <%= t.privacy_policy.changes_title %></h2>
+            <p><%= t.privacy_policy.changes_text %></p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>10. <%= t.privacy_policy.contact_title %></h2>
+            <p><%= t.privacy_policy.contact_text %></p>
+            <p><%= t.privacy_policy.contact_email_label %>: <a href="mailto:support@taskify.com">support@taskify.com</a></p>
+          </section>
+        </div>
+
+        <div class="privacy-policy-back">
+          <a href="/" class="back-link"><%= t.privacy_policy.back_to_home %></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

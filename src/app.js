@@ -1,6 +1,8 @@
 const { urlencoded } = require("express");
 const express = require("express");
 const path = require("path");
+const session = require("express-session");
+const requireAuth = require("./middleware/auth");
 require("dotenv").config();
 require("../src/db/conn");
 const views_path = path.join(__dirname, "../views");
@@ -12,6 +14,15 @@ const port = process.env.PORT || 80;
 app.use("/static", express.static(static_path));
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
+app.use(session({
+    secret: process.env.SESSION_SECRET || "taskify-dev-session-secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        sameSite: "lax"
+    }
+}));
 
 
 app.set("view engine", "ejs");
@@ -25,8 +36,7 @@ app.get("/signup", (req, res) => {
     res.status(200).render("signup.ejs");
 });
 
-// In Future this dashboard will be rendered after authentication of users 
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", requireAuth, (req, res) => {
     res.status(200).render("dashboard/dashboard.ejs");
 });
 

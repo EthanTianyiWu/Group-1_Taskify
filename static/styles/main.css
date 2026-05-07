@@ -31,8 +31,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Restore focus outlines for keyboard navigation (WCAG 2.4.7) */
+:focus {
+  outline: 2px solid #9900f8;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #9900f8;
+  outline-offset: 2px;
 }
 
 ::-webkit-scrollbar {

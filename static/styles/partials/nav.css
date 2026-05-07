@@ -161,3 +161,19 @@ a .nav-title:hover {
   color: var(--clr-accent);
   text-decoration: none;
 }
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.nav-items li a:focus-visible {
+  outline: 2px solid #9900f8;
+  outline-offset: 2px;
+  border-radius: 2px;
+}

@@ -4,7 +4,6 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
-// 💡 修复 1：解决 Vercel 环境下 connect-mongo (v6) 的 ESM/CJS 兼容性问题
 const connectMongo = require("connect-mongo");
 const MongoStore = connectMongo.default || connectMongo;
 
@@ -19,7 +18,6 @@ const loginRouter = require("./routes/login.route");
 const app = express();
 const port = process.env.PORT || 80;
 
-// 💡 修复 2：在 Vercel Serverless 环境中，不能用 await 阻塞启动，直接调用即可（Mongoose 会自动排队请求）
 connectDB();
 
 app.use("/static", express.static(static_path));
@@ -33,7 +31,6 @@ app.use(
         secret: process.env.SECRET || "taskify-secret-key",
         resave: false,
         saveUninitialized: false,
-        // 添加 fallback URL，防止 Vercel 环境变量未加载时直接崩溃
         store: MongoStore.create({
             mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/taskify"
         }),

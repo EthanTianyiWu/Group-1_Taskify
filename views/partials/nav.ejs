@@ -1,39 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../static/styles/main.css">
-    <link rel="stylesheet" href="../../static/styles/partials/nav.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header role="banner">
-      <div class="container navbar-container">
-        <a href="/" class="logo-wrapper" aria-label="Taskify homepage">
-          <img src="../../static/assets/logo.png" alt="Taskify logo" class="logo" />
-          <h1 class="nav-title">Taskify</h1>
-        </a>
+<header>
+  <div class="container navbar-container">
+    <a href="/" class="logo-wrapper">
+      <img src="../../static/assets/logo.png" alt="logo" class="logo" />
+      <h1 class="nav-title">Taskify</h1>
+    </a>
 
-        <nav role="navigation" aria-label="Main navigation">
-          <ul class="nav-items" role="menubar">
-            <li role="none"><a href="#" role="menuitem"><%= t.nav.features %></a></li>
-            <li role="none"><a href="#" role="menuitem"><%= t.nav.templates %></a></li>
-            <li role="none"><a href="#" role="menuitem"><%= t.nav.for_teams %></a></li>
-            <li role="none"><a href="#" role="menuitem"><%= t.nav.resources %></a></li>
-            <li role="none"><a href="#" role="menuitem"><%= t.nav.pricing %></a></li>
-          </ul>
-        </nav>
-        <div class="nav-buttons">
-          <div class="language-switcher">
-            <a href="?lang=en" class="lang-btn"><%= t.lang.english %></a>
-            <a href="?lang=zh" class="lang-btn"><%= t.lang.chinese %></a>
-          </div>
-          <a href="/signup" class="btn1 nav-btn" aria-label="Sign up for Taskify"><%= t.nav.sign_up %></a>
-          <a href="/dashboard" class="btn2 nav-btn" aria-label="Log in to Taskify"><%= t.nav.log_in %></a>
-        </div>
-      </div>
-    </header>
-  </body>
-</html>
+    <nav>
+      <ul class="nav-items">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Templates</a></li>
+        <li><a href="#">For Teams</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+    </nav>
+    <div class="nav-buttons">
+      <a href="/signup" class="btn1 nav-btn">Sign Up</a>
+      <a href="/dashboard" class="btn2 nav-btn">Log In</a>
+    </div>
+  </div>
+</header>

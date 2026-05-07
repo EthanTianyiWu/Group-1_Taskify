@@ -1,44 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../static/styles/main.css">
-    <link rel="stylesheet" href="../../static/styles/partials/hero.css" />
-  
-    <title>Document</title>
-  </head>
-  <body>
-    <section class="section hero-section">
-      <div class="container hero-container">
-        <div class="hero-col-text">
-          <div>
-            <h1 class="hero-heading"><%= t.hero.title %></h1>
-              
-          </div>
-          <div class="hero-desc">
-            <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, explicabo. -->
-          </div>
-          
-          <label for="hero-email" class="sr-only">Email address</label>
-          <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="<%= t.hero.email_placeholder %>" aria-label="<%= t.hero.email_placeholder %>">
-        
-          <a href="#" class="hero-btn" aria-label="Get started with Taskify"><%= t.hero.get_started %></a>
+<section class="section hero-section">
+  <div class="container hero-container">
+    <div class="hero-col-text">
+      <div>
+        <h1 class="hero-heading">One app to replace them all</h1>
+      </div>
+      <div class="hero-desc">
         </div>
-        
       
-          
-          <div class="hero-col-img" role="img" aria-label="Laptop showing Taskify interface">
-              <img class="hero-image" src="../../static/assets/laptop.png" alt="Laptop showing Taskify task management interface">
-          
-          </div>
-
-        
-       </div>
-      
+      <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="Enter your email address">
     
-      </section>
+      <a href="#" class="hero-btn">Get Started</a>
+    </div>
     
-  </body>
-</html>
+    <div class="hero-col-img">
+        <img class="hero-image" src="../../static/assets/laptop.png" >
+    </div>
+   </div>
+</section>

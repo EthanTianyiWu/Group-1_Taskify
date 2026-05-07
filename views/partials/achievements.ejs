@@ -1,44 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/styles/main.css">
-    <link rel="stylesheet" href="../../static/styles/partials/achievements.css" />
-
-    <title>Document</title>
-</head>
-<body>
-    <section class="section achievements-section">
-        <div class="container achievements-container">
-            <div class="achievements-left">
-                <h2 class="achievements-secondary-heading"><%= t.achievements.title %></h2>
-                <p><%= t.achievements.desc %></p>
-            </div>
-            <div class="achievements-right">
-                <div class="achievements-achievement-card">
-                    <img class="achievements-achievement-img" src="../../static/assets/achievement-1.webp" alt="Downloads achievement icon">
-                    <h3 class="achievements-achievement-heading">300+</h3>
-                    <p><%= t.achievements.downloads %></p>
-                </div>
-                <div class="achievements-achievement-card">
-                    <img class="achievements-achievement-img" src="../../static/assets/achievement-2.webp" alt="Tasks completed achievement icon">
-                    <h3 class="achievements-achievement-heading">100+</h3>
-                    <p><%= t.achievements.tasks %></p>
-                </div>
-                <div class="achievements-achievement-card">
-                    <img class="achievements-achievement-img" src="../../static/assets/achievement-3.webp" alt="Colleges achievement icon">
-                    <h3 class="achievements-achievement-heading">160+</h3>
-                    <p><%= t.achievements.colleges %></p>
-                </div>
-                <div class="achievements-achievement-card">
-                    <img class="achievements-achievement-img" src="../../static/assets/achievement-4.webp" alt="Pro users achievement icon">
-                    <h3 class="achievements-achievement-heading">100+</h3>
-                    <p><%= t.achievements.pro_users %></p>
-                </div>
-            </div>
+<section class="achievements-section">
+    <div class="achievement-container">
+        <div class="achievement-item">
+            <img src="/assets/achievement-1.webp" alt="Achievement 1" class="achievement-icon"> 
+            <h3 class="achievement-title">10k+ Active Users</h3>
         </div>
-    </section>
-</body>
-</html>
+        <div class="achievement-item">
+            <img src="/assets/achievement-2.webp" alt="Achievement 2" class="achievement-icon"> 
+            <h3 class="achievement-title">500+ Teams</h3>
+        </div>
+        <div class="achievement-item">
+            <img src="/assets/achievement-3.webp" alt="Achievement 3" class="achievement-icon"> 
+            <h3 class="achievement-title">99% Satisfaction</h3>
+        </div>
+        <div class="achievement-item">
+            <img src="/assets/achievement-4.webp" alt="Achievement 4" class="achievement-icon"> 
+            <h3 class="achievement-title">24/7 Support</h3>
+        </div>
+    </div>
+</section>

@@ -204,8 +204,54 @@ Sudip Maiti</a>
 
 If you liked working on this project, do ⭐ and share this repository.
 
-🎉 🎊 😃 Happy Contributing 😃 🎊 🎉
+🎉  😃 Happy Contributing 😃  🎉
 <br>
+
+## Completed Work - Defect 2 (同学A)
+
+### 任务描述
+修复 Defect 2：signup/login 表单提交到不存在的 POST 路由。
+
+### 完成内容
+
+#### 1. 用户数据模型 (`src/models/user.model.js`)
+- 创建 User Schema，包含 username、email、password 字段
+- 实现密码自动哈希（使用 bcryptjs）
+- 添加密码比较方法用于登录验证
+
+#### 2. 数据库连接 (`src/db/conn.js`)
+- 实现 MongoDB 连接函数
+- 添加错误处理和连接状态日志
+
+#### 3. 注册路由 (`src/routes/signup.route.js`)
+- 实现 `POST /signup` 路由
+- 表单字段验证（用户名、邮箱、密码）
+- 检查用户名/邮箱是否已存在
+- 创建用户并保存到数据库
+- 注册成功后自动登录并重定向到 dashboard
+
+#### 4. 登录路由 (`src/routes/login.route.js`)
+- 实现 `POST /login` 路由
+- 验证邮箱和密码
+- 密码比对验证
+- 登录成功后创建 session 并重定向到 dashboard
+
+#### 5. 认证中间件 (`src/middleware/auth.js`)
+- 实现 `requireAuth` 中间件
+- 检查用户 session 是否存在
+- 未登录用户自动重定向到 signup 页面
+
+#### 6. 应用配置更新 (`src/app.js`)
+- 添加 express-session 中间件配置
+- 使用 MongoStore 存储 session 数据
+- 注册 signup 和 login 路由
+- 为 `/dashboard` 路由添加 `requireAuth` 保护
+
+### 技术实现
+- **密码安全**: 使用 bcryptjs 进行密码哈希
+- **Session 管理**: 使用 express-session + connect-mongo 实现持久化 session
+- **路由保护**: 使用中间件实现 dashboard 访问控制
+- **错误处理**: 完整的错误处理和用户反馈机制
 
 <!-- ##  Contact Me
 
@@ -230,3 +276,7 @@ If you want to contact me, you can reach me through below handles.
 
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)  -->
+
+
+
+

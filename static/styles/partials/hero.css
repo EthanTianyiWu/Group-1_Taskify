@@ -1,10 +1,10 @@
 :root {
   --clr-main-bg: #fff;
   --clr-light-white: #f0f0f0;
-  --clr-lightgrey: #d3d3d3;
-  --clr-grey: rgb(177, 177, 177);
-  --clr-text: #000;
-  --clr-medium-light: rgba(0, 0, 0, 0.6);
+  --clr-lightgrey: #9ca3af;
+  --clr-grey: #6b7280;
+  --clr-text: #1a1a1a;
+  --clr-medium-light: rgba(0, 0, 0, 0.75);
   --clr-accent-light: #3bc2e4;
   --clr-accent: #0ca6ec;
   --clr-underline: #83a4ff;
@@ -70,11 +70,11 @@
 
 .hero-col-text h1 {
   font-size: 50px;
-  color: #212121;
+  color: #1a1a1a;
   margin-bottom: 20px;
 }
 .hero-col-text p {
-  color: #555;
+  color: #374151;
   line-height: 22px;
 }
 

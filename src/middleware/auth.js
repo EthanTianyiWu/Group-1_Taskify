@@ -1,9 +1,8 @@
-function requireAuth(req, res, next) {
-    if (req.session && req.session.user) {
+const requireAuth = (req, res, next) => {
+    if (req.session && req.session.userId) {
         return next();
     }
+    res.redirect("/signup");
+};
 
-    return res.redirect("/signup");
-}
-
-module.exports = requireAuth;
+module.exports = { requireAuth };

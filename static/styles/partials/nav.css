@@ -1,10 +1,10 @@
 :root {
   --clr-main-bg: #fff;
   --clr-light-white: #f0f0f0;
-  --clr-lightgrey: #d3d3d3;
-  --clr-grey: rgb(177, 177, 177);
-  --clr-text: #000;
-  --clr-medium-light: rgba(0, 0, 0, 0.6);
+  --clr-lightgrey: #9ca3af;
+  --clr-grey: #6b7280;
+  --clr-text: #1a1a1a;
+  --clr-medium-light: rgba(0, 0, 0, 0.75);
   --clr-accent-light: #3bc2e4;
   --clr-accent: #0ca6ec;
   --clr-underline: #83a4ff;
@@ -123,7 +123,7 @@ a .nav-title:hover {
 }
 .btn2 {
   color: var(--clr-main-bg);
-  background-color: var(--clr-lightgrey);
+  background-color: #4b5563;
   text-decoration: none;
 }
 .btn1:hover {
@@ -132,5 +132,32 @@ a .nav-title:hover {
 }
 .btn2:hover {
   color: var(--clr-light-white);
-  background-color: var(--clr-grey);
+  background-color: #374151;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  color: var(--clr-text);
+  background-color: transparent;
+  border: 1px solid var(--clr-lightgrey);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  background-color: var(--clr-light-white);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  text-decoration: none;
 }

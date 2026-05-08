@@ -19,18 +19,13 @@
   --fw-bold: 700;
 
   --btn-padding: 8px 16px;
-  /* --gen-padding: 24px 40px; */
   --gen-padding: 24px 24px;
-
   --gen-transition: 0.2s ease-in-out;
 }
 
-/* .hero-section {
-  background-image: linear-gradient(to bottom, #eeeeee, white);
-} */
-
 .hero-container {
   padding-block: 6rem;
+  padding-top: 8rem; /* 防止被顶部固定导航栏遮挡 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,25 +33,22 @@
 }
 
 @keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }
 
 .hero-heading {
   margin-bottom: 2rem;
   font-weight: var(--fw-bold);
-  font-size: var(--fs-hero-head);
-  float: left;
+  font-size: 50px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
+
 .hero-desc {
   margin-bottom: 2rem;
-
-  font-size: var(--fs-hero-desc);
+  font-size: 18px;
+  color: #374151;
+  line-height: 1.5;
 }
 
 .hero-col-text {
@@ -64,8 +56,6 @@
   position: relative;
   margin-left: 8%;
   margin-top: 7%;
-  /* font-family: "Lato", sans-serif; */
-  
 }
 
 .hero-col-text h1 {
@@ -73,6 +63,7 @@
   color: #1a1a1a;
   margin-bottom: 20px;
 }
+
 .hero-col-text p {
   color: #374151;
   line-height: 22px;
@@ -81,28 +72,26 @@
 .hero-col-img {
   position: relative;
   width: 50%;
-  float: right;
+  display: flex;
+  justify-content: flex-end; /* 替代原来的 float: right */
 }
 
 .hero-image {
-  margin-top: 100px;
-  height: 450px;
-  width: 640px;
-  padding: 0 24px;
-  border-radius: 50%;
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
 
 .hero-btn {
   background: #9900f8;
-
   border-radius: 4px;
-  /* font-family: "Lato", sans-serif; */
   color: #fff;
   font-size: 18px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   text-decoration: none;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  width: 150px;
+  display: inline-block;
 }
 
 .hero-btn:hover {
@@ -110,10 +99,11 @@
 }
 
 .hero-input-email {
-  height: 2rem;
-  width: 25rem;
+  height: 3rem;
+  width: 100%;
+  max-width: 25rem;
   margin-bottom: 20px;
-  padding: 27px 20px;
+  padding: 0 20px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   font-size: 16px;
@@ -122,6 +112,5 @@
 }
 
 .hero-input-email:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 30px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 30px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

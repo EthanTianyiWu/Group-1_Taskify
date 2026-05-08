@@ -64,7 +64,7 @@ app.get("/privacy-policy", (req, res) => {
 
 module.exports = app;
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
     app.listen(port, () => {
         console.log(`The application started successfully on port ${port}`);
     });

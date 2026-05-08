@@ -13,6 +13,10 @@ jobs:
         run: npm install
       - name: Run tests and generate coverage
         run: npm test
+        env:
+          NODE_ENV: test
+          MONGO_URI: mongodb://localhost:27017/dummy_test_db
+          SECRET: dummy_secret_key
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:

@@ -56,19 +56,18 @@ describe('Taskify Full Coverage Tests', () => {
 
 // === 3. 注册逻辑全覆盖 (包含错误分支与成功分支) ===
     it('should fail signup with missing fields', async () => {
-        const res = await request(app).post('/signup').type('form').send({ username: 'test' });
+        // 故意漏传密码
+        const res = await request(app).post('/signup').type('form').send({ SignUpUsername: 'test' });
         expect(res.statusCode).not.toEqual(200);
     });
 
     it('should successfully signup a new user', async () => {
         const res = await agent.post('/signup')
-            .type('form') // 💡 重点：模拟真实网页表单提交
+            .type('form')
             .send({
-                username: 'testuser',
-                email: 'test@test.com',
-                password: 'password123',
-                cpassword: 'password123',       // 补充常见的确认密码字段
-                confirmPassword: 'password123'  // 补充常见的确认密码字段
+                SignUpUsername: 'testuser',          // 💡 改成和后端代码一致的变量名
+                SignUpEmail: 'test@test.com',        // 💡 改成和后端代码一致的变量名
+                SignUpPassword: 'password123'        // 💡 改成和后端代码一致的变量名
             });
         expect(res.statusCode).toBeLessThan(400);
     });
@@ -77,11 +76,9 @@ describe('Taskify Full Coverage Tests', () => {
         const res = await request(app).post('/signup')
             .type('form')
             .send({
-                username: 'testuser2',
-                email: 'test@test.com',
-                password: 'password123',
-                cpassword: 'password123',
-                confirmPassword: 'password123'
+                SignUpUsername: 'testuser2',
+                SignUpEmail: 'test@test.com',        // 故意使用刚才注册过的邮箱
+                SignUpPassword: 'password123'
             });
         expect(res.statusCode).not.toEqual(200);
     });
@@ -91,26 +88,25 @@ describe('Taskify Full Coverage Tests', () => {
         const res = await request(app).post('/login')
             .type('form')
             .send({
-                email: 'test@test.com',
-                password: 'wrongpassword'
+                LoginEmail: 'test@test.com',         // 💡 改成和后端代码一致的变量名
+                LoginPassword: 'wrongpassword'       // 💡 改成和后端代码一致的变量名
             });
         expect(res.statusCode).not.toEqual(200);
     });
 
     it('should successfully login existing user', async () => {
         const res = await agent.post('/login')
-            .type('form') // 💡 重点：模拟真实网页表单提交
+            .type('form')
             .send({
-                email: 'test@test.com',
-                password: 'password123'
+                LoginEmail: 'test@test.com',         // 💡 改成和后端代码一致的变量名
+                LoginPassword: 'password123'         // 💡 改成和后端代码一致的变量名
             });
         expect(res.statusCode).toBeLessThan(400);
     });
 
     // === 5. 仪表盘通行测试 (中间件成功分支) ===
     it('should allow access to dashboard for logged in users', async () => {
-        // 因为上一步登录成功了，agent 现在携带着合法的身份
         const res = await agent.get('/dashboard');
-        expect(res.statusCode).toEqual(200); // 期望成功看到 Dashboard (200)
+        expect(res.statusCode).toEqual(200);
     });
 });

@@ -54,46 +54,56 @@ describe('Taskify Full Coverage Tests', () => {
         expect(res.statusCode).toEqual(302);
     });
 
-    // === 3. 注册逻辑全覆盖 (包含错误分支与成功分支) ===
+// === 3. 注册逻辑全覆盖 (包含错误分支与成功分支) ===
     it('should fail signup with missing fields', async () => {
-        const res = await request(app).post('/signup').send({ username: 'test' });
-        expect(res.statusCode).not.toEqual(200); // 期望被拦截
+        const res = await request(app).post('/signup').type('form').send({ username: 'test' });
+        expect(res.statusCode).not.toEqual(200);
     });
 
     it('should successfully signup a new user', async () => {
-        const res = await agent.post('/signup').send({
-            username: 'testuser',
-            email: 'test@test.com',
-            password: 'password123'
-        });
-        // 注册成功应该触发重定向或正常返回
+        const res = await agent.post('/signup')
+            .type('form') // 💡 重点：模拟真实网页表单提交
+            .send({
+                username: 'testuser',
+                email: 'test@test.com',
+                password: 'password123',
+                cpassword: 'password123',       // 补充常见的确认密码字段
+                confirmPassword: 'password123'  // 补充常见的确认密码字段
+            });
         expect(res.statusCode).toBeLessThan(400);
     });
 
     it('should fail signup if email already exists', async () => {
-        const res = await request(app).post('/signup').send({
-            username: 'testuser2',
-            email: 'test@test.com', // 故意使用刚才注册过的邮箱
-            password: 'password123'
-        });
-        expect(res.statusCode).not.toEqual(200); // 期望触发“用户已存在”报错分支
+        const res = await request(app).post('/signup')
+            .type('form')
+            .send({
+                username: 'testuser2',
+                email: 'test@test.com',
+                password: 'password123',
+                cpassword: 'password123',
+                confirmPassword: 'password123'
+            });
+        expect(res.statusCode).not.toEqual(200);
     });
 
     // === 4. 登录逻辑全覆盖 (包含错误分支与成功分支) ===
     it('should fail login with wrong password', async () => {
-        const res = await request(app).post('/login').send({
-            email: 'test@test.com',
-            password: 'wrongpassword' // 故意输错密码
-        });
-        expect(res.statusCode).not.toEqual(200); // 期望触发“密码错误”报错分支
+        const res = await request(app).post('/login')
+            .type('form')
+            .send({
+                email: 'test@test.com',
+                password: 'wrongpassword'
+            });
+        expect(res.statusCode).not.toEqual(200);
     });
 
     it('should successfully login existing user', async () => {
-        // 使用 agent 登录，这样 agent 就会自动拿到 Session Cookie
-        const res = await agent.post('/login').send({
-            email: 'test@test.com',
-            password: 'password123' // 正确密码
-        });
+        const res = await agent.post('/login')
+            .type('form') // 💡 重点：模拟真实网页表单提交
+            .send({
+                email: 'test@test.com',
+                password: 'password123'
+            });
         expect(res.statusCode).toBeLessThan(400);
     });
 

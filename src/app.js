@@ -18,7 +18,11 @@ const loginRouter = require("./routes/login.route");
 const app = express();
 const port = process.env.PORT || 80;
 
-connectDB();
+// connectDB();
+// 测试环境下不自动连接数据库，避免测试结束后后台还在输出日志
+if (process.env.NODE_ENV !== 'test') {
+    connectDB();
+}
 
 app.use("/static", express.static(static_path));
 app.use(express.json());

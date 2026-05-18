@@ -51,8 +51,15 @@ app.get("/", (req, res) => {
     res.status(200).render("index.ejs");
 });
 
+// app.get("/signup", (req, res) => {
+//     res.status(200).render("signup.ejs");
+// });
 app.get("/signup", (req, res) => {
-    res.status(200).render("signup.ejs");
+    res.status(200).render("signup.ejs", { isLogin: false });
+});
+
+app.get("/login", (req, res) => {
+    res.status(200).render("signup.ejs", { isLogin: true });
 });
 
 app.use(signupRouter);

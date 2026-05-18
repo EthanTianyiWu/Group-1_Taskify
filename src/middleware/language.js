@@ -1,25 +1,18 @@
-const path = require('path');
+const en = require('../locales/en.json');
+const zh = require('../locales/zh.json');
 
-const loadLocale = (lang) => {
-  try {
-    return require(path.join(__dirname, '../locales', `${lang}.json`));
-  } catch (error) {
-    return require(path.join(__dirname, '../locales', 'en.json'));
-  }
+const locales = {
+    en: en,
+    zh: zh
 };
 
-const languageMiddleware = (req, res, next) => {
-  let lang = req.query.lang || req.cookies?.lang || 'en';
-  
-  if (!['en', 'zh'].includes(lang)) {
-    lang = 'en';
-  }
-
-  res.cookie('lang', lang, { maxAge: 30 * 24 * 60 * 60 * 1000 });
-  res.locals.lang = lang;
-  res.locals.t = loadLocale(lang);
-  
-  next();
+module.exports = (req, res, next) => {
+    const lang = req.query.lang || req.session.lang || 'en';
+    
+    req.session.lang = lang;
+    
+    res.locals.lang = lang;
+    res.locals.t = locales[lang] || locales.en;
+    
+    next();
 };
-
-module.exports = languageMiddleware;

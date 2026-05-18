@@ -60,9 +60,14 @@ const startServer = async () => {
         console.warn("Starting server without database connection. Some features may be unavailable.");
     }
 
-    app.listen(port, () => {
-        console.log(`The application started successfully on port ${port}`);
-    });
+    // Only listen on port when not running on Vercel
+    if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+        app.listen(port, () => {
+            console.log(`The application started successfully on port ${port}`);
+        });
+    }
 };
 
 startServer();
+
+module.exports = app;

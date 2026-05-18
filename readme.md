@@ -6,7 +6,7 @@
 <br>
 
 <p align="center">
-[![codecov](https://codecov.io/gh/EthanTianyiWu/Group-1_Taskify/graph/badge.svg)](https://codecov.io/gh/EthanTianyiWu/Group-1_Taskify)
+[![codecov]([https://codecov.io/gh/EthanTianyiWu/Group-1_Taskify/graph/badge.svg](https://codecov.io/gh/EthanTianyiWu/Group-1_Taskify/graph/badge.svg))]
 <a href="https://github.com/DSCKGEC/Taskify"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&logo=github"></a> 
 <a href="https://github.com/DSCKGEC/Taskify"><img src="https://img.shields.io/badge/Open%20Source-%F0%9F%A4%8D-Green"></a> 
 <a href="https://github.com/DSCKGEC/Taskify"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square"></a>

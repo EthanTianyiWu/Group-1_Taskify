@@ -21,7 +21,7 @@
       <h1 id="auth-heading" class="sr-only">Authentication</h1>
       <div class="container signup-container">
       <div class="main">
-        <input type="checkbox" id="chk" aria-hidden="true" />
+        <input type="checkbox" id="chk" aria-hidden="true" <%= typeof isLogin !== 'undefined' && isLogin ? 'checked' : '' %> />
 
         <div class="signup">
           <form method="post" action="/signup">

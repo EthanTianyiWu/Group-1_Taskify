@@ -7,9 +7,16 @@ const locales = {
 };
 
 module.exports = (req, res, next) => {
-    const lang = req.query.lang || req.session.lang || 'en';
+    let lang = 'en';
+    if (req.query.lang) {
+        lang = req.query.lang;
+    } else if (req.session && req.session.lang) {
+        lang = req.session.lang;
+    }
     
-    req.session.lang = lang;
+    if (req.session) {
+        req.session.lang = lang;
+    }
     
     res.locals.lang = lang;
     res.locals.t = locales[lang] || locales.en;

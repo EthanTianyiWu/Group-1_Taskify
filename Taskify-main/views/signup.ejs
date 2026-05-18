@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/styles/signup.css" />
+  <link rel="stylesheet" href="../static/styles/partials/cookie-banner.css" />
+  <title>SignUp</title>
+</head>
+
+<body>
+  <div class="language-switcher-top">
+    <a href="?lang=en" class="lang-btn"><%= t.lang.english %></a>
+    <a href="?lang=zh" class="lang-btn"><%= t.lang.chinese %></a>
+  </div>
+  <main role="main">
+    <section class="section signup-section" aria-labelledby="auth-heading">
+      <h1 id="auth-heading" class="sr-only">Authentication</h1>
+      <div class="container signup-container">
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+
+        <div class="signup">
+          <% if (locals.error) { %>
+            <div class="error-message" style="color: red; text-align: center; margin-bottom: 10px; font-size: 14px;"><%= locals.error %></div>
+          <% } %>
+          <form method="post" action="/signup">
+            <label for="chk" aria-hidden="true"><%= t.signup.signup %></label>
+            <div class="signup-username">
+              <input type="text" name="SignUpUsername" placeholder="<%= t.signup.username %>" required="true" />
+            </div>
+            <div class="signup-email">
+              <input type="email" name="SignUpEmail" placeholder="<%= t.signup.email %>" required="true" />
+            </div>
+            <div class="signup-password">
+              <input type="password" name="SignUpPassword" placeholder="<%= t.signup.password %>" required="true" />
+            </div>
+            <div>
+              <input class="button" name="SignUpSubmit" type="submit" value="<%= t.signup.signup %>" />
+            </div>
+          </form>
+        </div>
+        <div class="login">
+          <% if (locals.error) { %>
+            <div class="error-message" style="color: red; text-align: center; margin-bottom: 10px; font-size: 14px;"><%= locals.error %></div>
+          <% } %>
+          <form method="post" action="/login">
+            <label for="chk" aria-hidden="true"><%= t.signup.login %></label>
+            <div class="signup-email">
+              <input type="email" name="LoginEmail" placeholder="<%= t.signup.enter_email %>" required="true" />
+            </div>
+            <div class="signup-password">
+              <input type="password" name="LoginPassword" placeholder="<%= t.signup.enter_password %>" required="true" />
+            </div>
+            <div>
+              <input class="button" name="LoginSubmit" type="submit" value="<%= t.signup.login %>" />
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <%-include("../views/partials/cookie-banner.ejs") %>
+</body>
+
+</html>

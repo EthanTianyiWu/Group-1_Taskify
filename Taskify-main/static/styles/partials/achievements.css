@@ -1,0 +1,30 @@
+.achievements-section {
+    padding: 40px 0;
+}
+
+.achievements-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 24px;
+    padding-right: 24px;
+    padding-left: 48px;
+}
+
+.achievement-item {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.achievement-icon {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.achievement-title {
+    font-size: 18px;
+    font-weight: var(--fw-bold);
+    margin: 0;
+}

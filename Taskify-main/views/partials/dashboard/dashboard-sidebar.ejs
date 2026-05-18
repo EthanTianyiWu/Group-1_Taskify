@@ -1,0 +1,72 @@
+<section class="sidebar">
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <img src="../../../static/assets/nav_logo.png" alt="" />
+      </div>
+      <div class="sidebar-title">Taskify</div>
+      <a href="#">
+        <i class="menuIcon material-icons">menu</i>
+      </a>
+    </div>
+    <div class="sidebar-items">
+      <ul class="menu">
+        <li class="sidebar-list">
+          <a href="#">
+            <span class="sidebar-icon"><i class="fa-solid fa-house"></i></span>
+            <span class="sidebar-name"><%= t.dashboard.overview %></span>
+          </a>
+        </li>
+
+        <li class="sidebar-list">
+          <a href="#">
+            <span class="sidebar-icon">
+              <i class="fa-solid fa-chart-simple"></i>
+            </span>
+            <span class="sidebar-name"><%= t.dashboard.stats %></span>
+          </a>
+        </li>
+
+        <li class="sidebar-list">
+          <a href="#">
+            <span class="sidebar-icon"><i class="fa-solid fa-folder-open"></i></span>
+            <span class="sidebar-name"><%= t.dashboard.projects %></span>
+          </a>
+        </li>
+
+        <li class="sidebar-list">
+          <a href="#">
+            <span class="sidebar-icon"><i class="fa-solid fa-comment"></i></span>
+            <span class="sidebar-name"><%= t.dashboard.chat %></span>
+          </a>
+        </li>
+
+        <li class="sidebar-list">
+          <a href="#">
+            <span class="sidebar-icon">
+              <i class="fa-solid fa-calendar-days"></i>
+            </span>
+            <span class="sidebar-name"><%= t.dashboard.calendar %></span>
+          </a>
+        </li>
+        <div class="bottom-section">
+          <li class="sidebar-list">
+            <a href="#">
+              <span class="sidebar-icon"><i class="fa-solid fa-gear"></i></span>
+              <span class="sidebar-name"><%= t.dashboard.settings %></span>
+            </a>
+          </li>
+
+          <li class="sidebar-list">
+            <a href="/logout">
+              <span class="sidebar-icon">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </span>
+              <span class="sidebar-name"><%= t.dashboard.log_out %></span>
+            </a>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -2,14 +2,14 @@
   <section class="dashboard-cards-section section">
     <div class="dashboard-cards-container container">
       <div class="dashboard-head">
-        <div class="dashboard-project">Projects</div>
+        <div class="dashboard-project"><%= t.dashboard.projects %></div>
 
         <div class="dashboard-select">
           <select class="dashboard-custom-select">
-            <option value="dashboard-This Day">This Day</option>
-            <option value="dashboard-This Week">This Week</option>
-            <option value="dashboard-This Month">This Month</option>
-            <option value="dashboard-This Year">This Year</option>
+            <option value="dashboard-This Day"><%= t.dashboard.this_day %></option>
+            <option value="dashboard-This Week"><%= t.dashboard.this_week %></option>
+            <option value="dashboard-This Month"><%= t.dashboard.this_month %></option>
+            <option value="dashboard-This Year"><%= t.dashboard.this_year %></option>
           </select>
         </div>
       </div>
@@ -17,7 +17,7 @@
       <div class="dashboard-cards-container-list">
         <div class="dashboard-card card-1">
           <div class="dashboard-card-head">
-            <div class="dashboard-card-topic">To do</div>
+            <div class="dashboard-card-topic"><%= t.dashboard.to_do %></div>
             <div class="dashboard-task-number">0</div>
           </div>
           <div class="dashboard-add-button">+</div>
@@ -42,7 +42,7 @@
         </div>
         <div class="dashboard-card card-2">
           <div class="dashboard-card-head">
-            <div class="dashboard-card-topic">In progress</div>
+            <div class="dashboard-card-topic"><%= t.dashboard.in_progress %></div>
             <div class="dashboard-task-number">0</div>
           </div>
           <div class="dashboard-add-button">+</div>
@@ -59,7 +59,7 @@
         </div>
         <div class="dashboard-card card-3">
           <div class="dashboard-card-head">
-            <div class="dashboard-card-topic">Completed</div>
+            <div class="dashboard-card-topic"><%= t.dashboard.completed %></div>
             <div class="task-number">0</div>
           </div>
           <div class="dashboard-add-button">+</div>

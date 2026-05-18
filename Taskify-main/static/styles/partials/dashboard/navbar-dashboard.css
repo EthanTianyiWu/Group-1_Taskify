@@ -141,3 +141,24 @@
   text-decoration: none;
 }
 
+.lang-switcher-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.lang-btn-nav {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang-btn-nav:hover {
+  background-color: #f0f0f0;
+  color: #0ca6ec;
+}
+

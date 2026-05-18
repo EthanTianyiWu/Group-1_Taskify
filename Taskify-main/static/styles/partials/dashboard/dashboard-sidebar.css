@@ -92,6 +92,32 @@
   line-height: 60px;
 }
 
+.language-switcher-sidebar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  margin-top: 8px;
+}
+
+.language-switcher-sidebar .lang-btn {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #1a1a1a;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.language-switcher-sidebar .lang-btn:hover {
+  background-color: #e5e7eb;
+  border-color: #0ca6ec;
+  color: #0ca6ec;
+}
+
 .bottom-section {
   top: 154px;
 } 

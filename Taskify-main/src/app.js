@@ -3,10 +3,6 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-
-const connectMongo = require("connect-mongo");
-const MongoStore = connectMongo.default || connectMongo;
-
 require("dotenv").config();
 const connectDB = require("./db/conn");
 const views_path = path.join(__dirname, "../views");
@@ -16,13 +12,7 @@ const { requireAuth } = require("./middleware/auth");
 const signupRouter = require("./routes/signup.route");
 const loginRouter = require("./routes/login.route");
 const app = express();
-const port = process.env.PORT || 80;
-
-// connectDB();
-// 测试环境下不自动连接数据库，避免测试结束后后台还在输出日志
-if (process.env.NODE_ENV !== 'test') {
-    connectDB();
-}
+const port = process.env.PORT || 3000;
 
 app.use("/static", express.static(static_path));
 app.use(express.json());
@@ -35,9 +25,6 @@ app.use(
         secret: process.env.SECRET || "taskify-secret-key",
         resave: false,
         saveUninitialized: false,
-        store: MongoStore.create({
-            mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/taskify"
-        }),
         cookie: {
             maxAge: 1000 * 60 * 60 * 24
         }
@@ -66,10 +53,16 @@ app.get("/privacy-policy", (req, res) => {
     res.status(200).render("privacy-policy.ejs");
 });
 
-module.exports = app;
+const startServer = async () => {
+    const dbConnected = await connectDB();
 
-if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
+    if (!dbConnected) {
+        console.warn("Starting server without database connection. Some features may be unavailable.");
+    }
+
     app.listen(port, () => {
         console.log(`The application started successfully on port ${port}`);
     });
-}
+};
+
+startServer();
